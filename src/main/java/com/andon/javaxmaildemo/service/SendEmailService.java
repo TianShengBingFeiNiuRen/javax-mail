@@ -37,11 +37,16 @@ public class SendEmailService {
         String from = "andon20190123@163.com";
         String authorizationCode = "******"; //授权码
         String host = "smtp.163.com";
-        int port = 25;
+//        int port = 25;
         Properties properties = System.getProperties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.host", host);
-        properties.put("mail.smtp.port", port);
+//        properties.put("mail.smtp.port", port);
+        // 阿里云服务器 通过JavaMail发送邮箱STMP问题
+        // 25端口被禁用 使用SSL协议465端口
+        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        properties.put("mail.smtp.socketFactory.port", "465");
+        properties.put("mail.smtp.port", "465");
         Session session = Session.getDefaultInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
