@@ -1,4 +1,4 @@
-# javax-mail
+# javax mail 使用SSL协议465端口群发
 
 ```
 <dependency>
