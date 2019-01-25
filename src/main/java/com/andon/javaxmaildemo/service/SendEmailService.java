@@ -34,8 +34,8 @@ public class SendEmailService {
                 LOG.error("new InternetAddress failure, error={}", e.getMessage());
             }
         }
-        String from = "andon20190123@163.com";
-        String authorizationCode = "******"; //授权码
+        String from = "######@163.com";
+        String authorizationCode = "######"; //授权码
         String host = "smtp.163.com";
 //        int port = 25;
         Properties properties = System.getProperties();
@@ -50,7 +50,7 @@ public class SendEmailService {
         Session session = Session.getDefaultInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("andon20190123@163.com", authorizationCode);
+                return new PasswordAuthentication("######@163.com", authorizationCode);
             }
         });
 
