@@ -47,7 +47,7 @@ public class SendEmailService {
         properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         properties.put("mail.smtp.socketFactory.port", "465");
         properties.put("mail.smtp.port", "465");
-        Session session = Session.getDefaultInstance(properties, new Authenticator() {
+        Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication("######@163.com", authorizationCode);
